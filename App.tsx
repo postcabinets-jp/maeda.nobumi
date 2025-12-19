@@ -118,21 +118,20 @@ const Hero = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-[4/5] md:aspect-[4/3] lg:aspect-square bg-gradient-to-br from-blue-100 to-slate-200 rounded-2xl overflow-hidden shadow-2xl relative flex items-center justify-center">
+            <div className="aspect-[3/4] md:aspect-[4/3] lg:aspect-[5/4] rounded-2xl overflow-hidden shadow-2xl relative">
               <img 
                 src="/hero-image.jpg" 
                 alt="前田将臣" 
-                className="w-full h-full object-cover absolute inset-0"
+                className="w-full h-full object-cover"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-blue-50 to-slate-200"></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <p className="text-sm font-light tracking-widest uppercase mb-1">OSAKA PREFECTURAL ASSEMBLY MEMBER</p>
-                <p className="text-2xl serif font-bold">前田 将臣</p>
-                <p className="text-xs text-white/90 mt-1">挑戦する人を、全力で応援します。</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-blue-900/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                <p className="text-xs md:text-sm font-light tracking-widest uppercase mb-2 opacity-90">OSAKA PREFECTURAL ASSEMBLY MEMBER</p>
+                <p className="text-2xl md:text-3xl serif font-bold mb-2">前田 将臣</p>
+                <p className="text-sm md:text-base text-white/95">挑戦する人を、全力で応援します。</p>
               </div>
             </div>
             {/* Decorative Card */}
@@ -390,33 +389,26 @@ const Profile = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex flex-col md:flex-row gap-12 items-start">
           <div className="md:w-5/12">
-            <div className="aspect-[3/4] bg-slate-200 rounded-lg overflow-hidden relative shadow-lg">
-              <img 
-                src="https://picsum.photos/600/800?grayscale" 
-                alt="前田将臣 プロフィール" 
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="mt-6 text-center md:text-left">
-               <h2 className="text-3xl font-bold text-slate-900 serif mb-1">前田 将臣</h2>
-               <p className="text-blue-700 font-bold text-lg mb-4">大阪府議会議員</p>
+            <div className="sticky top-24">
+              <div className="aspect-[3/4] rounded-xl overflow-hidden relative shadow-xl mb-6">
+                <img 
+                  src="/profile-image.jpg" 
+                  alt="前田将臣 プロフィール" 
+                  className="object-cover w-full h-full"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement!.className = 'aspect-[3/4] rounded-xl overflow-hidden relative shadow-xl mb-6 bg-gradient-to-br from-blue-50 to-slate-100';
+                  }}
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl font-bold text-slate-900 serif mb-1">前田 将臣</h2>
+                <p className="text-blue-700 font-bold text-lg mb-4">大阪府議会議員</p>
+              </div>
             </div>
           </div>
           <div className="md:w-7/12">
             <div className="prose prose-lg text-slate-700 leading-relaxed font-serif">
-              <div className="mb-8">
-                <div className="w-full aspect-[4/3] bg-gradient-to-br from-blue-50 to-slate-100 rounded-lg shadow-lg mb-6 flex items-center justify-center relative overflow-hidden">
-                  <img 
-                    src="/profile-image.jpg" 
-                    alt="前田将臣" 
-                    className="w-full h-full object-cover absolute inset-0"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-100/50 to-slate-100"></div>
-                </div>
-              </div>
                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 leading-snug">
                  創造し、挑戦する。<br/>
                  人生はいつも<span className="text-orange-600 bg-orange-50 px-1">「この瞬間」</span>しか存在しない
