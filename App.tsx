@@ -118,15 +118,16 @@ const Hero = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-[4/5] md:aspect-[4/3] lg:aspect-square bg-slate-200 rounded-2xl overflow-hidden shadow-2xl relative">
+            <div className="aspect-[4/5] md:aspect-[4/3] lg:aspect-square bg-gradient-to-br from-blue-100 to-slate-200 rounded-2xl overflow-hidden shadow-2xl relative flex items-center justify-center">
               <img 
                 src="/hero-image.jpg" 
                 alt="前田将臣" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover absolute inset-0"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-blue-50 to-slate-200"></div>
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white">
                 <p className="text-sm font-light tracking-widest uppercase mb-1">OSAKA PREFECTURAL ASSEMBLY MEMBER</p>
@@ -404,14 +405,17 @@ const Profile = () => {
           <div className="md:w-7/12">
             <div className="prose prose-lg text-slate-700 leading-relaxed font-serif">
               <div className="mb-8">
-                <img 
-                  src="/profile-image.jpg" 
-                  alt="前田将臣" 
-                  className="w-full rounded-lg shadow-lg object-cover mb-6"
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                  }}
-                />
+                <div className="w-full aspect-[4/3] bg-gradient-to-br from-blue-50 to-slate-100 rounded-lg shadow-lg mb-6 flex items-center justify-center relative overflow-hidden">
+                  <img 
+                    src="/profile-image.jpg" 
+                    alt="前田将臣" 
+                    className="w-full h-full object-cover absolute inset-0"
+                    onError={(e) => {
+                      e.currentTarget.style.display = 'none';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-blue-100/50 to-slate-100"></div>
+                </div>
               </div>
                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 leading-snug">
                  創造し、挑戦する。<br/>
