@@ -125,18 +125,6 @@ const Hero = () => {
                 }}
               />
             </div>
-            {/* Decorative Card */}
-            <div className="absolute -bottom-6 -right-6 bg-white p-5 rounded-xl shadow-xl border border-slate-100 max-w-xs hidden md:block">
-              <div className="flex items-center gap-3">
-                <div className="bg-orange-100 p-2 rounded-full text-orange-600">
-                  <CheckCircle2 size={20} />
-                </div>
-                <div>
-                  <p className="text-sm font-bold text-slate-900">即、行動できる</p>
-                  <p className="text-xs text-slate-500">明日からの景色が変わります</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
