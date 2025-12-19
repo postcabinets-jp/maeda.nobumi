@@ -154,16 +154,28 @@ const Problem = () => {
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { icon: Clock, title: "将来への漠然とした不安", text: "今のままで良いのか分からない。でも、何から始めればいいか分からない。" },
-            { icon: Map, title: "次のステージが見えない", text: "仕事も家庭も大切。でも、自分自身の成長や挑戦も諦めたくない。" },
-            { icon: Users, title: "本音で話せる人がいない", text: "職場や家族には言いにくい悩み。利害関係のない第三者に聞いてほしい。" },
+            { 
+              icon: Clock, 
+              title: "将来への漠然とした不安", 
+              text: "このままでいいのか、どこから手をつければいいのか。答えのない問いに、一人で向き合っていませんか？" 
+            },
+            { 
+              icon: Map, 
+              title: "次のステージが見えない", 
+              text: "仕事も家庭も大切にしながら、自分自身の成長や挑戦も諦めたくない。そんな想いを抱えていませんか？" 
+            },
+            { 
+              icon: Users, 
+              title: "本音で話せる人がいない", 
+              text: "職場や家族には言いにくい悩みがある。利害関係のない、純粋にあなたの立場に立った相談相手が欲しい。" 
+            },
           ].map((item, idx) => (
             <div key={idx} className="bg-blue-50/50 p-8 rounded-2xl border border-blue-100 hover:shadow-lg transition duration-300">
               <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6">
                 <item.icon size={24} strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3">{item.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{item.text}</p>
+              <h3 className="text-lg font-bold text-slate-900 mb-3 leading-snug">{item.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed whitespace-normal">{item.text}</p>
             </div>
           ))}
         </div>
@@ -183,26 +195,26 @@ const Solution = () => {
           <div>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6 serif leading-tight">
               政治家の視点。<br />
-              庶民の感覚。
+              生活者の目線。
             </h2>
             <p className="text-blue-200 text-lg mb-8 leading-relaxed">
-              政治家への相談と聞くと、ハードルが高く感じるかもしれません。<br />
-              しかし、私は誰よりも現場を歩き、皆さんの声を聴くことが仕事です。<br />
-              広い視野（マクロ）と、生活者の実感（ミクロ）。この両方の視点から、あなたの悩みを解決へ導きます。
+              政治家への相談と聞くと、少しハードルが高く感じるかもしれません。<br />
+              しかし、私の仕事は現場を歩き、一人ひとりの声に耳を傾けることです。<br />
+              広い視野（マクロ）と、日々の生活から見える実感（ミクロ）。この両方の視点で、あなたの悩みに向き合います。
             </p>
             <ul className="space-y-6">
               {[
-                { title: "行政・支援制度の知識", text: "実は知られていない補助金や支援サービスなど、使えるリソースを紹介できるかもしれません。" },
+                { title: "行政・支援制度の知識", text: "知られていない補助金や支援サービスなど、あなたが使えるリソースを一緒に見つけます。" },
                 { title: "完全中立な壁打ち相手", text: "商品を売りつけたりしません。あなたの利益だけを考えた、純粋な作戦会議です。" },
-                { title: "30分でロードマップ完成", text: "「話してスッキリした」で終わらせません。明日からの行動計画（ロードマップ）を作成します。" }
+                { title: "30分でロードマップ完成", text: "「話してスッキリした」で終わらせません。明日からの具体的な行動計画を作成します。" }
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-4">
                   <div className="w-6 h-6 rounded-full bg-orange-500 flex items-center justify-center flex-shrink-0 mt-1">
                     <CheckCircle2 size={14} className="text-white" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg text-white">{item.title}</h4>
-                    <p className="text-blue-200 text-sm mt-1">{item.text}</p>
+                    <h4 className="font-bold text-lg text-white mb-1">{item.title}</h4>
+                    <p className="text-blue-200 text-sm leading-relaxed">{item.text}</p>
                   </div>
                 </li>
               ))}
