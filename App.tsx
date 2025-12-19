@@ -123,6 +123,9 @@ const Hero = () => {
                 src="/hero-image.jpg" 
                 alt="前田将臣" 
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/50 to-transparent"></div>
               <div className="absolute bottom-6 left-6 text-white">
@@ -405,6 +408,9 @@ const Profile = () => {
                   src="/profile-image.jpg" 
                   alt="前田将臣" 
                   className="w-full rounded-lg shadow-lg object-cover mb-6"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none';
+                  }}
                 />
               </div>
                <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-8 leading-snug">
