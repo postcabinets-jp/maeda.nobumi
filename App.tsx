@@ -158,12 +158,12 @@ const Problem = () => {
               text: "職場や家族には言いにくい悩みがある。利害関係のない、純粋にあなたの立場に立った相談相手が欲しい。" 
             },
           ].map((item, idx) => (
-            <div key={idx} className="bg-blue-50/50 p-8 rounded-2xl border border-blue-100 hover:shadow-lg transition duration-300">
-              <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6">
+            <div key={idx} className="bg-blue-50/50 p-8 rounded-2xl border border-blue-100 hover:shadow-lg transition duration-300 flex flex-col h-full">
+              <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 mb-6 flex-shrink-0">
                 <item.icon size={24} strokeWidth={1.5} />
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-3 leading-snug">{item.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed whitespace-normal">{item.text}</p>
+              <h3 className="text-lg font-bold text-slate-900 mb-3 leading-snug flex-shrink-0">{item.title}</h3>
+              <p className="text-slate-600 text-sm leading-relaxed flex-grow">{item.text}</p>
             </div>
           ))}
         </div>
@@ -183,7 +183,7 @@ const Solution = () => {
           <div>
             <h2 className="text-3xl lg:text-5xl font-bold mb-6 serif leading-tight">
               政治家の視点。<br />
-              生活者の目線。
+              府民の目線。
             </h2>
             <p className="text-blue-200 text-lg mb-8 leading-relaxed">
               政治家への相談と聞くと、少しハードルが高く感じるかもしれません。<br />
