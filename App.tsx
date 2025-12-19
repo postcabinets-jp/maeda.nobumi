@@ -85,9 +85,6 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 border border-orange-200 text-orange-800 text-xs font-bold tracking-wider uppercase">
-              Free Consultation
-            </div>
             <h1 className="text-4xl lg:text-6xl font-bold text-slate-900 leading-[1.2] serif">
               そのモヤモヤ、<br />
               <span className="relative inline-block">
@@ -96,10 +93,10 @@ const Hero = () => {
               </span>
               で「地図」に変える。
             </h1>
-            <p className="text-lg text-slate-700 leading-relaxed max-w-lg">
-              大阪府議会議員・前田将臣が、あなたのビジネスやキャリアの悩みをフラットに伺います。<br />
-              政治活動の一環としての「なんでも相談室」。<br />
-              解決までの「ロードマップ」を一緒に作りましょう。
+            <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
+              ビジネスやキャリアの悩み、誰にも言えない本音。<br />
+              大阪府議会議員・前田将臣が、利害関係なく、フラットにあなたの話を聞きます。<br />
+              <span className="text-slate-500">政治活動の一環として、無料で相談を受け付けています。</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
@@ -118,25 +115,19 @@ const Hero = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-[3/4] md:aspect-[4/3] lg:aspect-[5/4] rounded-2xl overflow-hidden shadow-2xl relative">
+            <div className="aspect-[3/4] md:aspect-[4/3] lg:aspect-[5/4] rounded-2xl overflow-hidden shadow-2xl">
               <img 
                 src="/hero-image.jpg" 
                 alt="前田将臣" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain bg-slate-50"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/70 via-blue-900/20 to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                <p className="text-xs md:text-sm font-light tracking-widest uppercase mb-2 opacity-90">OSAKA PREFECTURAL ASSEMBLY MEMBER</p>
-                <p className="text-2xl md:text-3xl serif font-bold mb-2">前田 将臣</p>
-                <p className="text-sm md:text-base text-white/95">挑戦する人を、全力で応援します。</p>
-              </div>
             </div>
             {/* Decorative Card */}
             <div className="absolute -bottom-6 -right-6 bg-white p-5 rounded-xl shadow-xl border border-slate-100 max-w-xs hidden md:block">
-              <div className="flex items-center gap-3 mb-2">
+              <div className="flex items-center gap-3">
                 <div className="bg-orange-100 p-2 rounded-full text-orange-600">
                   <CheckCircle2 size={20} />
                 </div>
