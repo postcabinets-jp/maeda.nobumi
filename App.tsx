@@ -47,9 +47,9 @@ const Header = () => {
             <button onClick={() => scrollTo('about')} className="text-slate-600 hover:text-blue-700 text-sm font-medium transition">想い・プロフィール</button>
             <button onClick={() => scrollTo('features')} className="text-slate-600 hover:text-blue-700 text-sm font-medium transition">特徴</button>
             <button onClick={() => scrollTo('process')} className="text-slate-600 hover:text-blue-700 text-sm font-medium transition">流れ</button>
-            <button onClick={() => scrollTo('contact')} className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition shadow-md hover:shadow-lg">
+            <a href="https://app.spirinc.com/patterns/availability-sharing/d07eab39-cba0-4dc8-a24b-11dc5c7ab82e/confirm" target="_blank" rel="noopener noreferrer" className="bg-orange-500 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-orange-600 transition shadow-md hover:shadow-lg">
               相談を予約する
-            </button>
+            </a>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -67,7 +67,7 @@ const Header = () => {
             <button onClick={() => scrollTo('about')} className="block w-full text-left px-3 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-md">想い・プロフィール</button>
             <button onClick={() => scrollTo('features')} className="block w-full text-left px-3 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-md">特徴</button>
             <button onClick={() => scrollTo('process')} className="block w-full text-left px-3 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-md">相談の流れ</button>
-            <button onClick={() => scrollTo('contact')} className="block w-full mt-4 bg-orange-500 text-white px-3 py-3 rounded-md text-base font-medium text-center">相談を予約する</button>
+            <a href="https://app.spirinc.com/patterns/availability-sharing/d07eab39-cba0-4dc8-a24b-11dc5c7ab82e/confirm" target="_blank" rel="noopener noreferrer" className="block w-full mt-4 bg-orange-500 text-white px-3 py-3 rounded-md text-base font-medium text-center">相談を予約する</a>
           </div>
         </div>
       )}
@@ -99,13 +99,15 @@ const Hero = () => {
               <span className="text-slate-500">政治活動の一環として、無料で相談を受け付けています。</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
+              <a 
+                href="https://app.spirinc.com/patterns/availability-sharing/d07eab39-cba0-4dc8-a24b-11dc5c7ab82e/confirm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex justify-center items-center px-8 py-4 bg-orange-500 text-white font-medium rounded-lg hover:bg-orange-600 transition shadow-lg shadow-orange-500/20 group"
               >
                 まずは相談する（無料）
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
               <button 
                 onClick={() => document.getElementById('demo')?.scrollIntoView({behavior: 'smooth'})}
                 className="inline-flex justify-center items-center px-8 py-4 bg-white text-blue-900 border border-blue-100 font-medium rounded-lg hover:bg-blue-50 transition"
@@ -359,12 +361,14 @@ const DemoAI = () => {
 
               <div className="mt-8 text-center pt-6 border-t border-slate-100">
                 <p className="text-sm text-slate-500 mb-4">AIのアドバイスはいかがでしたか？<br/>より具体的な実行支援が必要なら、ぜひ直接お話ししましょう。</p>
-                <button 
-                   onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}
+                <a 
+                   href="https://app.spirinc.com/patterns/availability-sharing/d07eab39-cba0-4dc8-a24b-11dc5c7ab82e/confirm"
+                   target="_blank"
+                   rel="noopener noreferrer"
                    className="text-orange-600 font-bold hover:underline flex items-center justify-center gap-1 mx-auto text-lg"
                 >
                   30分無料相談を予約する <ArrowRight size={20} />
-                </button>
+                </a>
               </div>
             </div>
           )}
@@ -466,10 +470,15 @@ const CTA = () => {
             </div>
           </div>
           
-          <button className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+          <a 
+            href="https://app.spirinc.com/patterns/availability-sharing/d07eab39-cba0-4dc8-a24b-11dc5c7ab82e/confirm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-4 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-lg transition shadow-lg shadow-orange-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1"
+          >
             <MessageSquare size={20} />
             今すぐ日程を調整する
-          </button>
+          </a>
           <p className="mt-4 text-xs text-slate-400">
             ※ 外部スケジューリングツールへ移動します。<br/>
             ※ 営業・勧誘目的でのご利用はお控えください。
