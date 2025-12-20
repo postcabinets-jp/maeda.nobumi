@@ -19,13 +19,6 @@ const getAI = (): GoogleGenAI => {
       apiKey = match[0];
     }
     
-    console.log('API Key check:', { 
-      hasApiKey: !!apiKey && apiKey !== '', 
-      keyLength: apiKey.length,
-      keyPrefix: apiKey.substring(0, 10),
-      keyType: typeof apiKeyRaw
-    });
-    
     if (!apiKey || apiKey === '' || apiKey === 'undefined' || apiKey === 'null' || !apiKey.startsWith('AIzaSy')) {
       throw new Error("GEMINI_API_KEY環境変数が正しく設定されていません。Vercelダッシュボードで設定してください。");
     }
