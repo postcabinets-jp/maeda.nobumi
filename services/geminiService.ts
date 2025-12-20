@@ -7,7 +7,12 @@ let ai: GoogleGenAI | null = null;
 const getAI = (): GoogleGenAI => {
   if (!ai) {
     const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
-    if (!apiKey) {
+    console.log('API Key check:', { 
+      hasApiKey: !!apiKey, 
+      keyLength: apiKey?.length || 0,
+      keyPrefix: apiKey?.substring(0, 10) || 'N/A'
+    });
+    if (!apiKey || apiKey === '') {
       throw new Error("GEMINI_API_KEY環境変数が設定されていません。Vercelダッシュボードで設定してください。");
     }
     ai = new GoogleGenAI({ apiKey });

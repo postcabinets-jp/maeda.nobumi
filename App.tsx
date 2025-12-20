@@ -279,6 +279,7 @@ const DemoAI = () => {
       setRoadmap(result);
       setLoading(LoadingState.SUCCESS);
     } catch (error) {
+      console.error('Error generating roadmap:', error);
       setLoading(LoadingState.ERROR);
     }
   };
