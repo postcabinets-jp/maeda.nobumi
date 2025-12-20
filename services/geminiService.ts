@@ -8,22 +8,30 @@ const getAI = (): GoogleGenAI => {
   if (!ai) {
     // 環境変数からAPIキーを取得（文字列として確実に扱う）
     const apiKeyRaw = process.env.API_KEY || process.env.GEMINI_API_KEY;
-    const apiKey = typeof apiKeyRaw === 'string' ? apiKeyRaw : String(apiKeyRaw || '');
+    let apiKey = typeof apiKeyRaw === 'string' ? apiKeyRaw : String(apiKeyRaw || '');
+    
+    // 改行文字や余分な文字を削除
+    apiKey = apiKey.trim().replace(/\n/g, '').replace(/^y\n?/i, '').replace(/\n?$/g, '');
+    
+    // AIzaSyで始まる部分だけを抽出（APIキーの正しい形式）
+    const match = apiKey.match(/AIzaSy[A-Za-z0-9_-]+/);
+    if (match) {
+      apiKey = match[0];
+    }
     
     console.log('API Key check:', { 
       hasApiKey: !!apiKey && apiKey !== '', 
       keyLength: apiKey.length,
       keyPrefix: apiKey.substring(0, 10),
-      keyType: typeof apiKeyRaw,
-      rawValue: apiKeyRaw
+      keyType: typeof apiKeyRaw
     });
     
-    if (!apiKey || apiKey === '' || apiKey === 'undefined' || apiKey === 'null') {
-      throw new Error("GEMINI_API_KEY環境変数が設定されていません。Vercelダッシュボードで設定してください。");
+    if (!apiKey || apiKey === '' || apiKey === 'undefined' || apiKey === 'null' || !apiKey.startsWith('AIzaSy')) {
+      throw new Error("GEMINI_API_KEY環境変数が正しく設定されていません。Vercelダッシュボードで設定してください。");
     }
     
     // APIキーを文字列として確実に渡す
-    ai = new GoogleGenAI({ apiKey: apiKey.trim() });
+    ai = new GoogleGenAI({ apiKey: apiKey });
   }
   return ai;
 };
