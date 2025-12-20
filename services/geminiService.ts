@@ -6,16 +6,24 @@ let ai: GoogleGenAI | null = null;
 
 const getAI = (): GoogleGenAI => {
   if (!ai) {
-    const apiKey = process.env.API_KEY || process.env.GEMINI_API_KEY;
+    // 環境変数からAPIキーを取得（文字列として確実に扱う）
+    const apiKeyRaw = process.env.API_KEY || process.env.GEMINI_API_KEY;
+    const apiKey = typeof apiKeyRaw === 'string' ? apiKeyRaw : String(apiKeyRaw || '');
+    
     console.log('API Key check:', { 
-      hasApiKey: !!apiKey, 
-      keyLength: apiKey?.length || 0,
-      keyPrefix: apiKey?.substring(0, 10) || 'N/A'
+      hasApiKey: !!apiKey && apiKey !== '', 
+      keyLength: apiKey.length,
+      keyPrefix: apiKey.substring(0, 10),
+      keyType: typeof apiKeyRaw,
+      rawValue: apiKeyRaw
     });
-    if (!apiKey || apiKey === '') {
+    
+    if (!apiKey || apiKey === '' || apiKey === 'undefined' || apiKey === 'null') {
       throw new Error("GEMINI_API_KEY環境変数が設定されていません。Vercelダッシュボードで設定してください。");
     }
-    ai = new GoogleGenAI({ apiKey });
+    
+    // APIキーを文字列として確実に渡す
+    ai = new GoogleGenAI({ apiKey: apiKey.trim() });
   }
   return ai;
 };
